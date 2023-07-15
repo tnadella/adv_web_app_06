@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Password Format Checker - Report</h1>
+  <h2>Password Check Result:</h2>
+  {% if valid %}
+    <p>The password meets all the requirements.</p>
+  {% else %}
+    <ul>The password does not meet all the requirements.</ul>
+    {% if v1 %}
+    <li>The password does not have the upper case letter!</li>
+    {% endif %}
+    {% if v2 %}
+    <li>The password does not have the lower case letter!</li>
+    {% endif %}
+    {% if v3 %}
+    <li>The password does not ends with a number!</li>
+    {% endif %}
+    {% if v4 %}
+    <li>The password length is not greater than or equal to 8</li>
+    {% endif %}
+{% endif %}
+{% endblock %}
